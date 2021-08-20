@@ -94,7 +94,7 @@ defmodule EmojiDownloader do
   defp resolve_alias(ali, aliases, originals) do
     cond do
       Map.has_key?(originals, ali) -> ali
-      Map.has_key?(aliases, ali) -> resolve_alias(aliases[ali], originals, aliases)
+      Map.has_key?(aliases, ali) -> resolve_alias(aliases[ali], aliases, originals)
       true -> nil
     end
   end
